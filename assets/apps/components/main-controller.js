@@ -20,23 +20,23 @@ app.controller('MainController', function ($scope) {
         dislikes: 0
     }
     
-    this.resp = [{
+    $scope.resp = [{
         comment: "String",
         date: Date.now(),
         likes: 0,
         dislikes: 0
     }]
     
-    
-    $scope.testy= [];
-    
-    $scope.addNew = function(response){
-        this.testy.push(response);
+
+    $scope.addNew = function(){
+        if($scope.response){
+        $scope.resp.push($scope.response);
         $scope.response = '';
+        }
     }
 
     $scope.destroy = function (index) {
-        this.testy.splice(index, 1);
+        $scope.resp.splice(index, 1);
     }
 
 });
