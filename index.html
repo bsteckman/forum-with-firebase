@@ -21,7 +21,13 @@
    <button ng-click="discFunc(newQ)">Submit question</button> 
 
   
-  
+  <ul>
+      <li ng-repeat="quest in ourStack track by $index"> 
+          <h3>{{quest.question}}</h3>
+          <button ng-click="voteUp()">Vote Up: </button ><label for="upVote">{{disc.likes}}</label>
+          <button ng-click="voteDown()">Vote Down: </button><label for="downVote">{{disc.dislikes}}</label>
+      </li>
+  </ul>
   
   
   
