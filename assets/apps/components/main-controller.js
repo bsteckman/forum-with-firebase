@@ -4,11 +4,13 @@ app.controller('MainController', function($scope){
 $scope.ourStack =[];
 $scope.discFunc = function(){
     if($scope.newQ){
-        
+        $scope.newQ.date = Date.now();
+        $scope.newQ.ans =[];
         $scope.ourStack.push($scope.newQ);
-    $scope.newQ ="";
+        $scope.newQ ="";
     };
 };
+
 
     this.disc = {
         question: "What is love",
@@ -45,3 +47,4 @@ $scope.discFunc = function(){
 //   }
 //   $scope.minusOne = function(index) {
   	// $scope.products[index].dislikes += 1;
+
