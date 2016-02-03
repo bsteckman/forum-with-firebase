@@ -1,16 +1,16 @@
 app.controller('MainController', function(){
     this.test = 'hello';
     
-    var disc = {
-        question: "string",
-        tags: "string",
-        date: date,
+    this.disc = {
+        question: "What is love",
+        tags: "noFilter",
+        date: Date.now(),
         ans: [{
-            resp: bool,
-            com: "string";
+            resp: false,
+            com: "are you high?",
             up: 0,
             down: 0,
-            date: date.now(),
+            date: Date.now(),
         }]
     }
     

@@ -13,7 +13,7 @@
     {{mc.test}}
     {{2+2}}
     
-    
+    {{mc.disc}}
     
    
   
@@ -28,13 +28,16 @@
     <div class="panel-body">
         <ul class="list-group">
             <div>
-                <li class="list-group-item">commentLorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis.
-                    <div>
-                        <li class="list-group-item">responseLorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, repellendus.</li>
-                    </div>
-                </li>
+                <li class="list-group-item">commentLorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis.</li>
+            </div>
+            <div>
+                <li class="list-group-item">{{}}</li>
+            </div>
+            <div>
+                <li class="list-group-item">responseLorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis.</li>
             </div>
         </ul>
+        <input type="text" ng-model="response"><button ng-click="addNew(response)">Submit</button>
     </div>
 </div>
 ​
