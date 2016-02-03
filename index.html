@@ -26,6 +26,8 @@
           <h3>{{quest.question}}</h3>
           <button ng-click="voteUp($index)">Vote Up: </button ><label for="upVote">{{ourStack[$index].likes}}</label>
           <button ng-click="voteDown($index)">Vote Down: </button><label for="downVote">{{ourStack[$index].dislikes}}</label>
+          <br/>
+          <input type="text" ng-model="response"><button ng-click="respFunc()">Submit</button>
       </li>
   </ul>
   
@@ -41,27 +43,15 @@
                 <li class="list-group-item">commentLorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis.</li>
             </div>
             <div>
-                <li class="list-group-item" ng-repeat="thing in resp track by $index">{{thing}}<button ng-click="destroy($index)">Delete Comment</button></li>
+                <li class="list-group-item" ng-repeat="thing in resp track by $index">{{thing.response}}<button ng-click="destroy($index)">Delete Comment</button></li>
             </div>
             <div>
                 <li id = "response" class="list-group-item">responseLorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis.</li>
             </div>
         </ul>
-        <input type="text" ng-model="response"><button ng-click="addNew()">Submit</button>
     </div>
 </div>
-​
 
-   
-<!--   
- <div class='response'>
-     <p ng-repeat="thing in response">{{thing}}</p>
- </div>  
- <div class="comment">
-     <p ng-repeat="stuff in comment">{{stuff}}</p>
- </div>
-   
-   -->
     
     <!--UPVOTE/DOWNVOTE-->
 
@@ -69,15 +59,6 @@
     <p class="likes" ng-click="plusOne($index)">{{product.likes}} </p>
     <p class="dislikes" ng-click="minusOne($index)">{{product.dislikes}}</p>
 </div>
-
-<!--Each item needs a like and dislike property-->
-
-  <!--$scope.plusOne = function(index) {
-  	$scope.products[index].likes += 1;
-  }
-  $scope.minusOne = function(index) {
-  	$scope.products[index].dislikes += 1;
-  }-->
     
         <!--JS Components-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>

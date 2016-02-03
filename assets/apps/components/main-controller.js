@@ -12,28 +12,27 @@ app.controller('MainController', function ($scope) {
         };
     };
 
-    this.disc = {
-        question: "What is love",
-        tags: "noFilter",
-        date: Date.now(),
-        likes: 0,
-        dislikes: 0
-    }
+    // this.disc = {
+    //     question: "What is love",
+    //     tags: "noFilter",
+    //     date: Date.now(),
+    //     likes: 0,
+    //     dislikes: 0
+    // }
     
-    $scope.resp = [{
-        comment: "String",
-        date: Date.now(),
-        likes: 0,
-        dislikes: 0
-    }]
-    
-
-    $scope.addNew = function(){
+    $scope.resp = []
+    $scope.respFunc = function (){
         if($scope.response){
-        $scope.resp.push($scope.response);
-        $scope.response = '';
+            $scope.resp.date = Date.now();
+            $scope.resp.likes = 0;
+            $scope.resp.dislikes = 0;
+            $scope.resp.push($scope.response);
+            $scope.response = "";           
         }
     }
+    
+
+ 
 
     $scope.destroy = function (index) {
         $scope.resp.splice(index, 1);
@@ -46,5 +45,3 @@ app.controller('MainController', function ($scope) {
   	 $scope.ourStack[index].dislikes += 1;
   }
 });
-
-//Each item needs a like and dislike property
