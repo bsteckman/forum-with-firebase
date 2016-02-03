@@ -39,7 +39,7 @@
         <div class="panel-body">
             <ul class="list-group">
                 <div>
-                    <li class="list-group-item" ng-repeat="thing in resp track by $index">{{thing.date | date}} {{thing.question}}
+                    <li class="list-group-item" ng-repeat="thing in resp track by $index">{{thing.date | date: "yyyy/MM/dd HH:mm" }} {{thing.question}}
                         <button ng-click="destroy($index)">Delete Comment</button>
                     </li>
                 </div>
