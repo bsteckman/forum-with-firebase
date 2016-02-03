@@ -10,9 +10,14 @@
 </head>
 <body ng-controller="MainController as mc">
     
-    {{mc.test}}
-    {{2+2}}
-    
+    <label for="">Input your question here.</label>
+    <br>
+   <input type="text" ng-model="newQ.question"> 
+   <br>
+    <label for="" >One word description of your question.</label>
+    <br>
+   <input type="text" ng-model="newQ.tags">
+   <button ng-click="discFunc(newQ)">Submit question</button> 
     
     
    
