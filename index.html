@@ -47,7 +47,7 @@
                 <li class="list-group-item">commentLorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis.</li>
             </div>
             <div>
-                <li class="list-group-item" ng-repeater="thing in testy track by $index">{{thing}}</li>
+                <li class="list-group-item" ng-repeat="thing in testy track by $index">{{thing}}<button ng-click="destroy($index)">Delete Comment</button></li>
             </div>
             <div>
                 <li class="list-group-item">responseLorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis.</li>

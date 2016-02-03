@@ -31,7 +31,8 @@ $scope.discFunc = function(){
     $scope.testy= [];
     
     $scope.addNew = function(response){
-        $scope.testy.push(response)
+        this.testy.push(response);
+        $scope.response = '';
     }
     
         $scope.destroy = function(index){
