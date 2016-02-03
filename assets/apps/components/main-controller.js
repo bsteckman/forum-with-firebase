@@ -39,12 +39,12 @@ app.controller('MainController', function ($scope) {
         this.testy.splice(index, 1);
     }
 
+  $scope.voteUp = function(index) {
+  	 $scope.ourStack[index].likes += 1;
+   }
+   $scope.voteDown = function(index) {
+  	 $scope.ourStack[index].dislikes += 1;
+  }
 });
 
 //Each item needs a like and dislike property
-//   $scope.plusOne = function(index) {
-  	// $scope.products[index].likes += 1;
-//   }
-//   $scope.minusOne = function(index) {
-  	// $scope.products[index].dislikes += 1;
-//   }
