@@ -1,16 +1,16 @@
 
-/* global $s */
-app.controller('MainController', function($scope){
-$scope.ourStack =[];
-$scope.discFunc = function(){
-    if($scope.newQ){
-        $scope.newQ.date = Date.now();
-        $scope.newQ.ans =[];
-        $scope.ourStack.push($scope.newQ);
-        $scope.newQ ="";
+app.controller('MainController', function ($scope) {
+    $scope.ourStack = [];
+    $scope.discFunc = function () {
+        if ($scope.newQ) {
+            $scope.newQ.date = Date.now();
+            $scope.newQ.likes = 0;
+            $scope.newQ.dislikes = 0;
+            $scope.newQ.ans = [];
+            $scope.ourStack.push($scope.newQ);
+            $scope.newQ = "";
+        };
     };
-};
-
 
     this.disc = {
         question: "What is love",
@@ -34,18 +34,9 @@ $scope.discFunc = function(){
         this.testy.push(response);
         $scope.response = '';
     }
-    
-        $scope.destroy = function(index){
+
+    $scope.destroy = function (index) {
         this.testy.splice(index, 1);
     }
-    
+
 });
-
-// Each item needs a like and dislike property-->
-
-//   $scope.plusOne = function(index) {
-  	// $scope.products[index].likes += 1;
-//   }
-//   $scope.minusOne = function(index) {
-  	// $scope.products[index].dislikes += 1;
-
