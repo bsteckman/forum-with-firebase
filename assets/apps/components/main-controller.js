@@ -1,7 +1,15 @@
+
+/* global $s */
 app.controller('MainController', function($scope){
-    this.test = 'hello';
-    
-    $scope.disc = {
+$scope.ourStack =[];
+$scope.discFunc = function(){
+    if($scope.newQ){
+        $scope.ourStack.push($scope.newQ);
+    $scope.newQ ="";
+    };
+};
+
+    this.disc = {
         question: "What is love",
         tags: "noFilter",
         date: Date.now(),
@@ -23,4 +31,4 @@ app.controller('MainController', function($scope){
         this.testy.splice(index, 1);
     }
     
-})
+});
