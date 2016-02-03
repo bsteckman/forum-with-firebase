@@ -33,14 +33,16 @@ $scope.discFunc = function(){
         question: "What is love",
         tags: "noFilter",
         date: Date.now(),
-        ans: [{
-            resp: false,
-            com: "are you high?",
-            up: 0,
-            down: 0,
-            date: Date.now(),
-        }]
     }
+    
+    this.resp = {
+        comment: "String",
+        date: Date.now(),
+        up: 0,
+        down: 0
+    }
+    
+    
     $scope.testy= [];
     
     $scope.addNew = function(response){
