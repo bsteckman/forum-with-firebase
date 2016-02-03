@@ -1,7 +1,7 @@
-app.controller('MainController', function(){
+app.controller('MainController', function($scope){
     this.test = 'hello';
     
-    this.disc = {
+    $scope.disc = {
         question: "What is love",
         tags: "noFilter",
         date: Date.now(),
@@ -12,6 +12,15 @@ app.controller('MainController', function(){
             down: 0,
             date: Date.now(),
         }]
+    }
+    $scope.testy= [];
+    
+    $scope.addNew = function(response){
+        $scope.testy.push(response)
+    }
+    
+        $scope.destroy = function(index){
+        this.testy.splice(index, 1);
     }
     
 })

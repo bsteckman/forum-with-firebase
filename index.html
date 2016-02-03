@@ -13,7 +13,7 @@
     {{mc.test}}
     {{2+2}}
     
-    {{mc.disc}}
+    {{mc.testy}}
     
    
   
@@ -31,7 +31,7 @@
                 <li class="list-group-item">commentLorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis.</li>
             </div>
             <div>
-                <li class="list-group-item">{{}}</li>
+                <li class="list-group-item" ng-repeater="thing in testy track by $index">{{thing}}</li>
             </div>
             <div>
                 <li class="list-group-item">responseLorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis.</li>
