@@ -1,5 +1,6 @@
 
 app.controller('MainController', function ($scope) {
+   var mc = this;
     $scope.ourStack = [];
     $scope.discFunc = function () {
         if ($scope.newQ) {
@@ -21,27 +22,29 @@ app.controller('MainController', function ($scope) {
     // }
     
     $scope.resp = []
-    $scope.respFunc = function (){
-        if($scope.response){
-            $scope.resp.date = Date.now();
-            $scope.resp.likes = 0;
-            $scope.resp.dislikes = 0;
-            $scope.resp.push($scope.response);
-            $scope.response = "";           
+    $scope.respFunc = function (response) {
+        debugger;
+        if (response) {
+            response.date = Date.now();
+            response.likes = 0;
+            response.dislikes = 0;
+            $scope.resp.push(response);
+            debugger;
+            mc.response = "";
         }
     }
-    
 
- 
+
+
 
     $scope.destroy = function (index) {
         $scope.resp.splice(index, 1);
     }
 
-  $scope.voteUp = function(index) {
-  	 $scope.ourStack[index].likes += 1;
-   }
-   $scope.voteDown = function(index) {
-  	 $scope.ourStack[index].dislikes += 1;
-  }
+    $scope.voteUp = function (index) {
+        $scope.ourStack[index].likes += 1;
+    }
+    $scope.voteDown = function (index) {
+        $scope.ourStack[index].dislikes += 1;
+    }
 });
