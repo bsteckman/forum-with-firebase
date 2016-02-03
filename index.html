@@ -5,7 +5,7 @@
     <!--Styling-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="assets/styles/syle.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
     
 </head>
 <body ng-controller="MainController as mc">
@@ -41,10 +41,10 @@
                 <li class="list-group-item">commentLorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis.</li>
             </div>
             <div>
-                <li class="list-group-item" ng-repeater="thing in testy track by $index">{{thing}}</li>
+                <li class="list-group-item" ng-repeat="thing in testy track by $index">{{thing}}<button ng-click="destroy($index)">Delete Comment</button></li>
             </div>
             <div>
-                <li class="list-group-item">responseLorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis.</li>
+                <li id = "response" class="list-group-item">responseLorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis.</li>
             </div>
         </ul>
         <input type="text" ng-model="response"><button ng-click="addNew(response)">Submit</button>

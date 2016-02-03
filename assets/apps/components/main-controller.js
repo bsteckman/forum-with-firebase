@@ -20,18 +20,19 @@ app.controller('MainController', function ($scope) {
         dislikes: 0
     }
     
-    this.resp = {
+    this.resp = [{
         comment: "String",
         date: Date.now(),
         likes: 0,
         dislikes: 0
-    }
+    }]
     
     
     $scope.testy= [];
     
     $scope.addNew = function(response){
-        $scope.testy.push(response)
+        this.testy.push(response);
+        $scope.response = '';
     }
 
     $scope.destroy = function (index) {
@@ -39,3 +40,11 @@ app.controller('MainController', function ($scope) {
     }
 
 });
+
+//Each item needs a like and dislike property
+//   $scope.plusOne = function(index) {
+  	// $scope.products[index].likes += 1;
+//   }
+//   $scope.minusOne = function(index) {
+  	// $scope.products[index].dislikes += 1;
+//   }
