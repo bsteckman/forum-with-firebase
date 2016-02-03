@@ -1,5 +1,6 @@
 
 /* global $s */
+<<<<<<< HEAD
 app.controller('MainController', function ($scope) {
     $scope.ourStack = [];
     $scope.discFunc = function () {
@@ -14,12 +15,25 @@ app.controller('MainController', function ($scope) {
     };
 
 
+=======
+app.controller('MainController', function($scope){
+$scope.ourStack =[];
+$scope.discFunc = function(){
+    if($scope.newQ){
+        $scope.newQ.date = Date.now();
+        $scope.newQ.ans =[];
+        $scope.ourStack.push($scope.newQ);
+        $scope.newQ ="";
+    };
+};
+>>>>>>> bb593db0c45b0008c34690d0d1246b1bf7dd39e1
 
 
     this.disc = {
         question: "What is love",
         tags: "noFilter",
         date: Date.now(),
+<<<<<<< HEAD
         ans: [{
             resp: false,
             com: "are you high?",
@@ -31,6 +45,23 @@ app.controller('MainController', function ($scope) {
     $scope.testy = [];
 
     $scope.addNew = function (response) {
+=======
+        likes: 0,
+        dislikes: 0
+    }
+    
+    this.resp = {
+        comment: "String",
+        date: Date.now(),
+        likes: 0,
+        dislikes: 0
+    }
+    
+    
+    $scope.testy= [];
+    
+    $scope.addNew = function(response){
+>>>>>>> bb593db0c45b0008c34690d0d1246b1bf7dd39e1
         $scope.testy.push(response)
     }
 
@@ -40,3 +71,14 @@ app.controller('MainController', function ($scope) {
 
 });
 
+<<<<<<< HEAD
+=======
+// Each item needs a like and dislike property-->
+
+//   $scope.plusOne = function(index) {
+  	// $scope.products[index].likes += 1;
+//   }
+//   $scope.minusOne = function(index) {
+  	// $scope.products[index].dislikes += 1;
+
+>>>>>>> bb593db0c45b0008c34690d0d1246b1bf7dd39e1
