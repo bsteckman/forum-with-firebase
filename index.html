@@ -11,8 +11,6 @@
 </head>
 
 <body ng-controller="MainController as mc">
-
-
     <label for="">Input your question here.</label>
     <br>
     <input type="text" ng-model="newQ.question">
@@ -21,7 +19,6 @@
     <br>
     <input type="text" ng-model="newQ.tags">
     <button ng-click="discFunc(newQ)">Submit question</button>
-
 
     <ul>
         <li ng-repeat="quest in ourStack track by $index">
@@ -36,24 +33,15 @@
         </li>
     </ul>
 
-
-
-
     <div class="panel panel-default">
         <!-- Default panel contents -->
         <div class="panel-heading">Comments:</div>
         <div class="panel-body">
             <ul class="list-group">
                 <div>
-                    <li class="list-group-item">commentLorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis.</li>
-                </div>
-                <div>
-                    <li class="list-group-item" ng-repeat="thing in resp track by $index">{{thing.response}}
+                    <li class="list-group-item" ng-repeat="thing in resp track by $index">{{thing.date | date}} {{thing.question}}
                         <button ng-click="destroy($index)">Delete Comment</button>
                     </li>
-                </div>
-                <div>
-                    <li id="response" class="list-group-item">responseLorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis.</li>
                 </div>
             </ul>
         </div>
