@@ -30,7 +30,7 @@
     </div>
 <ul>
         <li ng-repeat="quest in ourStack | filter: query | orderBy: sortOrder track by $index">
-        <h3>{{quest.question}} <span ng-click="ultraDelete($index)" ><small>X</small></span></h3>
+        <h3>{{quest.question}} <span ng-click="ultraDelete($index)" class="badge"><small>X</small></span></h3>
          <label for="upVote" class="uppy"></label>
             <button class="btn btn-success" ng-click="voteUp($index)" type="button">
                 Vote Up: <span class="badge">{{quest.likes}}</span>
