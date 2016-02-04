@@ -11,13 +11,7 @@
 
 </head>
 
-<<<<<<< HEAD
 <body class="body" ng-controller="MainController as mc">
-    <div class="panel panel-default">
-        <input class="form-control" type="text" ng-model="query" placeholder="search">
-        <button class="btn btn-primary" ng-click="sortOrder = 'tags'">Sort by tags -A</button>
-        <button class="btn btn-primary" ng-click="sortOrder = '-tags'">Sort by tags -D</button>
-    </div>
     <div class="jumbotron">
     <label for="">Input your question here.</label>
     <br>
@@ -31,8 +25,8 @@
     </div>
      <div class="panel panel-default">
         <input type="text" ng-model="query" placeholder="search">
-        <button class="btn btn-info" ng-click="sortOrder = 'tags'">Sort by tags -A</button>
-        <button class="btn btn-info"" ng-click="sortOrder = '-tags'">Sort by tags -D</button>
+        <button class="btn btn-primary" ng-click="sortOrder = 'tags'">Sort by tags -A</button>
+        <button class="btn btn-primary" ng-click="sortOrder = '-tags'">Sort by tags -D</button>
     </div>
 <ul>
         <li ng-repeat="quest in ourStack | filter: query | orderBy: sortOrder track by $index">
