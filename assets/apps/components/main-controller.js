@@ -36,4 +36,12 @@ app.controller('MainController', function ($scope) {
     $scope.voteDown = function (index) {
         $scope.ourStack[index].dislikes -= 1;
     }
+    
+    
+    $scope.cvoteUp = function (quest, index) {
+        quest.ans[index].likes += 1;
+    }
+    $scope.cvoteDown = function (quest, index) {
+        quest.ans[index].dislikes -= 1;
+    }
 });
