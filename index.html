@@ -17,47 +17,45 @@
         <button class="btn btn-default" ng-click="sortOrder = '-tags'">Sort by tags -D</button>
     </div>
     <div class="jumbotron">
-        <label for="">Input your question here.</label>
-        <br>
+    <label for="">Input your question here.</label>
+    <br>
         <textarea class="form-control" rows="10" id="question" type="text" ng-model="newQ.question"></textarea>
-        <br>
-        <label for="">One word description of your question.</label>
-        <br>
-        <input type="text" ng-model="newQ.tags">
-        <button class="btn btn-default" ng-click="discFunc(newQ)">Submit question</button>
+    <br>
+    <label for="">One word description of your question.</label>
+    <br>
+    <input type="text" ng-model="newQ.tags">
+    <button class="btn btn-default" ng-click="discFunc(newQ)">Submit question</button>
     </div>
-    <ul>
+<ul>
         <li ng-repeat="quest in ourStack | filter: query | orderBy: sortOrder track by $index">
-            <h3>{{quest.question}}</h3>
-            <label for="upVote" class="uppy"></label>
+        <h3>{{quest.question}} <span ng-click="ultraDelete($index)" ><small>X</small></span></h3>
+         <label for="upVote" class="uppy"></label>
             <button class="btn btn-success" ng-click="voteUp($index)" type="button">
                 Vote Up: <span class="badge">{{quest.likes}}</span>
             </button>
-
-            <button class="btn btn-danger" ng-click="voteDown($index)" type="button">Vote Down: <span class="badge">{{quest.dislikes}}</span>
-            </button>
             <label for="downVote" class="downy"></label>
-            <br/>
+        <button class="btn btn-danger" ng-click="voteDown($index)" type="button">Vote Down: <span class="badge">{{quest.dislikes}}</span>
+            </button>
+        <br/>
             <div class="panel panel-default">
-                <ul>
-                    <li class="list-group-item" ng-repeat="thing in quest.ans track by $index">
-                        <button class="btn btn-success" ng-click="cvoteUp(quest, $index)">Vote Up: <span class="badge">{{thing.likes}}</span></button>
-                        <label for="upVote" class="uppy"></label>
-                        <button class="btn btn-danger" ng-click="cvoteDown(quest, $index)">Vote Down: <span class="badge">{{thing.dislikes}}</span></button>
-                        <label for="downVote" class="downy"></label>
-                        <button class="btn btn-default" ng-click="destroy(quest, $index)">Delete Comment</button>
-                        {{thing.date | date: "yyyy/MM/dd HH:mm" }}
-                        <h4>{{thing.body}}</h4>
-                        <input type="checkbox">Best Answer
-                        <br/>
-                    </li>
-                </ul>
-            </div>
-            <input type="text" ng-model="quest.response.body">
-            <button ng-click="respFunc(quest)">Submit</button>
-        </li>
-    </ul>
-
+            <ul>
+                <li class="list-group-item" ng-class="{bestAnswer: thing.bestAnswer}" ng-repeat="thing in quest.ans track by $index">
+                    <button class="btn btn-success" ng-click="cvoteUp(quest, $index)">Vote Up: </button>
+                    <label for="upVote" class="uppy">{{thing.likes}}</label>
+                    <button class="btn btn-danger" ng-click="cvoteDown(quest, $index)">Vote Down: <span class="badge">{{thing.dislikes}}</span></button>
+                    <label for="downVote" class="downy">{{thing.dislikes}}</label>
+                    <button class="btn btn-default" ng-click="destroy(quest, $index)">Delete Comment</button>
+                    {{thing.date | date: "yyyy/MM/dd HH:mm" }} 
+                    <h4>{{thing.body}}</h4>
+                    <input type="checkbox" ng-click="bestAnswer(thing)">Best Answer
+                    <br/>
+                </li>
+            </ul>
+        </div>
+        <input type="text" ng-model="quest.response.body">
+        <button ng-click="respFunc(quest)">Submit</button>
+    </li>
+</ul>
 
 
 
