@@ -12,27 +12,26 @@ app.controller('MainController', function ($scope) {
         };
     };
 
-    // this.disc = {
-    //     question: "What is love",
-    //     tags: "noFilter",
-    //     date: Date.now(),
-    //     likes: 0,
-    //     dislikes: 0
-    // }
+    $scope.ultraDelete = function(index){
+      $scope.ourStack.splice(index, 1);  
+    };
+    
     $scope.respFunc = function (quest) {
         if (quest.response) {
             quest.response.date = Date.now();
             quest.response.likes = 0;
             quest.response.dislikes = 0;
+            quest.response.bestAnswer = false;
             quest.ans.push(quest.response);
             quest.response = "";
         }
     }
-
+// delete comment
     $scope.destroy = function (quest, index) {
         quest.ans.splice(index, 1);
     }
 
+// Question voting
     $scope.voteUp = function (index) {
         $scope.ourStack[index].likes += 1;
     }
@@ -40,11 +39,16 @@ app.controller('MainController', function ($scope) {
         $scope.ourStack[index].dislikes -= 1;
     }
     
-    
+    // Comments voting
     $scope.cvoteUp = function (quest, index) {
         quest.ans[index].likes += 1;
     }
     $scope.cvoteDown = function (quest, index) {
         quest.ans[index].dislikes -= 1;
+    }
+   
+    // toggle best answer
+       $scope.bestAnswer = function (thing) {
+           thing.bestAnswer = !thing.bestAnswer;         
     }
 });
