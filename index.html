@@ -31,7 +31,7 @@
 
     <ul>
         <li ng-repeat="quest in ourStack | filter: query | orderBy: sortOrder track by $index">
-            <h3> <img ng-if="quest.isAnswered" src="assets/img/middleFinger.png" alt="Fah Que"> {{quest.question}} <span ng-click="ultraDelete($index)" class="badge">Delete</span></h3>
+            <h3> <img ng-if="quest.isAnswered" src="assets/img/middleFingerWhite.png" alt="Fah Que"> {{quest.question}} <span ng-click="ultraDelete($index)" class="badge">Delete</span></h3>
             <label for="upVote" class="uppy"></label>
             <button class="btn btn-success btn-xs" ng-click="voteUp($index)" type="button">
                 Vote Up: <span class="badge">{{quest.likes}}</span>
