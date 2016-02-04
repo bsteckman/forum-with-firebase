@@ -38,6 +38,9 @@
             <label for="downVote" class="downy"></label>
         <button class="btn btn-danger" ng-click="voteDown($index)" type="button">Vote Down: <span class="badge">{{quest.dislikes}}</span>
             </button>
+            <div>
+                <a ng-click="$scope.showComments(quest)">Comments</a>
+            </div>
         <br/>
             <div class="panel panel-default">
             <ul>
