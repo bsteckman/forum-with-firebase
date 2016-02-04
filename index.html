@@ -11,6 +11,8 @@
 </head>
 
 <body ng-controller="MainController as mc">
+
+
     <label for="">Input your question here.</label>
     <br>
     <input type="text" ng-model="newQ.question">
@@ -20,6 +22,7 @@
     <input type="text" ng-model="newQ.tags">
     <button ng-click="discFunc(newQ)">Submit question</button>
 
+<<<<<<< HEAD
 <ul>
     <li ng-repeat="quest in ourStack track by $index">
         <h3>{{quest.question}}</h3>
