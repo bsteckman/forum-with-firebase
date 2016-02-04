@@ -20,9 +20,15 @@
     }
 
 .bestAnswer{
-    background: #ff9;
+    background: cadetblue;
 
 }
+
 .showComment{
     display: none;
+}
+
+#title{
+    color: #DF691A;
+    font-weight: 600;
 }
