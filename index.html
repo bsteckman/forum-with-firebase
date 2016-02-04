@@ -26,19 +26,19 @@
     </div>
     <div class="panel panel-default">
         <input type="text" ng-model="query" placeholder="search">
-        <button class="btn btn-primary" ng-click="sortOrder = 'tags'">Sort by tags <i class="fa fa-level-up"></i></button>
-        <button class="btn btn-primary" ng-click="sortOrder = '-tags'">Sort by tags <i class="fa fa-level-down"></i></button>
+        <button class="btn btn-primary btn-sm" ng-click="sortOrder = 'tags'">Sort by tags <i class="fa fa-level-up"></i></button>
+        <button class="btn btn-primary btn-sm" ng-click="sortOrder = '-tags'">Sort by tags <i class="fa fa-level-down"></i></button>
     </div>
 
     <ul>
         <li ng-repeat="quest in ourStack | filter: query | orderBy: sortOrder track by $index">
             <h3>{{quest.question}} <span ng-click="ultraDelete($index)" class="badge">Delete</span></h3>
             <label for="upVote" class="uppy"></label>
-            <button class="btn btn-success" ng-click="voteUp($index)" type="button">
+            <button class="btn btn-success btn-xs" ng-click="voteUp($index)" type="button">
                 Vote Up: <span class="badge">{{quest.likes}}</span>
             </button>
             <label for="downVote" class="downy"></label>
-            <button class="btn btn-danger" ng-click="voteDown($index)" type="button">Vote Down: <span class="badge">{{quest.dislikes}}</span>
+            <button class="btn btn-danger btn-xs" ng-click="voteDown($index)" type="button">Vote Down: <span class="badge">{{quest.dislikes}}</span>
             </button>
             <div>
                 <a ng-click="$scope.showComments(quest)">Comments</a>
@@ -48,9 +48,9 @@
                 <ul>
                     <li class="list-group-item" ng-class="{bestAnswer: thing.bestAnswer}" ng-repeat="thing in quest.ans track by $index">
 
-                        <button class="btn btn-success" ng-click="cvoteUp(quest, $index)">Vote Up: <span class="badge">{{thing.likes}}</span></button>
+                        <button class="btn btn-success btn-xs" ng-click="cvoteUp(quest, $index)">Vote Up: <span class="badge">{{thing.likes}}</span></button>
 
-                        <button class="btn btn-danger" ng-click="cvoteDown(quest, $index)">Vote Down: <span class="badge">{{thing.dislikes}}</span></button>
+                        <button class="btn btn-danger btn-xs" ng-click="cvoteDown(quest, $index)">Vote Down: <span class="badge">{{thing.dislikes}}</span></button>
 
                         <span ng-click="destroy(quest, $index)" class="badge">Delete </span> {{thing.date | date: "yyyy/MM/dd
                         HH:mm" }}
