@@ -32,6 +32,6 @@ app.controller('MainController', function ($scope) {
         $scope.ourStack[index].likes += 1;
     }
     $scope.voteDown = function (index) {
-        $scope.ourStack[index].dislikes += 1;
+        $scope.ourStack[index].dislikes -= 1;
     }
 });
