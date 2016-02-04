@@ -11,7 +11,11 @@
 </head>
 
 <body ng-controller="MainController as mc">
-
+    <div>
+        <input type="text" ng-model="query" placeholder="search">
+        <button ng-click="sortOrder = 'tags'">Sort by tags -A</button>
+        <button ng-click="sortOrder = '-tags'">Sort by tags -D</button>
+    </div>
 
     <label for="">Input your question here.</label>
     <br>
@@ -23,7 +27,7 @@
     <button ng-click="discFunc(newQ)">Submit question</button>
 
 <ul>
-    <li ng-repeat="quest in ourStack track by $index">
+        <li ng-repeat="quest in ourStack | filter: query | orderBy: sortOrder track by $index">
         <h3>{{quest.question}}</h3>
         <button ng-click="voteUp($index)">Vote Up: </button>
         <label for="upVote" class="uppy">{{quest.likes}}</label>
@@ -48,6 +52,7 @@
         <button ng-click="respFunc(quest)">Submit</button>
     </li>
 </ul>
+
 
 
 

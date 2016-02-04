@@ -19,7 +19,6 @@ app.controller('MainController', function ($scope) {
     //     likes: 0,
     //     dislikes: 0
     // }
-    // $scope.resp = []
     $scope.respFunc = function (quest) {
         if (quest.response) {
             quest.response.date = Date.now();
