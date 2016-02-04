@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/superhero/bootstrap.min.css">
     <link rel="stylesheet" href="assets/styles/style.css">
-    <!--<i class="fa fa-exclamation-triangle"></i>-->
 </head>
 
 <body class="body" ng-controller="MainController as mc">
@@ -32,7 +31,7 @@
 
     <ul>
         <li ng-repeat="quest in ourStack | filter: query | orderBy: sortOrder track by $index">
-            <h3>{{quest.question}} <span ng-click="ultraDelete($index)" class="badge">Delete</span></h3>
+            <h3> <img ng-if="quest.isAnswered" src="assets/img/middleFinger.png" alt="Fah Que"> {{quest.question}} <span ng-click="ultraDelete($index)" class="badge">Delete</span></h3>
             <label for="upVote" class="uppy"></label>
             <button class="btn btn-success btn-xs" ng-click="voteUp($index)" type="button">
                 Vote Up: <span class="badge">{{quest.likes}}</span>
@@ -44,9 +43,13 @@
                 <a href='' ng-click="showComments(quest, thing)">Comments</a>
                 <br/>
             </div>
-            <div class="panel panel-default">
+            <div class="panel panel-default" ng-show="quest.showComment">
+                <div>
+                <input type="text" ng-model="quest.response.body">
+                <button class="btn btn-primary" ng-click="respFunc(quest)">Submit</button>
+                </div>
                 <ul>
-                    <li class="list-group-item" ng-class="{bestAnswer: thing.bestAnswer}" ng-hide="quest.showComment" ng-repeat="thing in quest.ans track by $index">
+                    <li class="list-group-item" ng-class="{bestAnswer: thing.bestAnswer}" ng-repeat="thing in quest.ans track by $index">
                         <button class="btn btn-success btn-xs" ng-click="cvoteUp(quest, $index)">Vote Up: <span class="badge">{{thing.likes}}</span></button>
 
                         <button class="btn btn-danger btn-xs" ng-click="cvoteDown(quest, $index)">Vote Down: <span class="badge">{{thing.dislikes}}</span></button>
@@ -58,8 +61,7 @@
                         <br/>
                     </li>
                 </ul>
-                <input type="text" ng-model="quest.response.body">
-                <button class="btn btn-primary" ng-click="respFunc(quest)">Submit</button>
+                
         </li>
     </ul>
     </div>
