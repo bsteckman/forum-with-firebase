@@ -40,10 +40,10 @@
             <div class="panel panel-default">
             <ul>
                 <li class="list-group-item" ng-class="{bestAnswer: thing.bestAnswer}" ng-repeat="thing in quest.ans track by $index">
-                    <button class="btn btn-success" ng-click="cvoteUp(quest, $index)">Vote Up: </button>
-                    <label for="upVote" class="uppy">{{thing.likes}}</label>
+                    <button class="btn btn-success" ng-click="cvoteUp(quest, $index)">Vote Up: <span class="badge">{{thing.likes}}</span></button>
+
                     <button class="btn btn-danger" ng-click="cvoteDown(quest, $index)">Vote Down: <span class="badge">{{thing.dislikes}}</span></button>
-                    <label for="downVote" class="downy">{{thing.dislikes}}</label>
+
                     <button class="btn btn-default" ng-click="destroy(quest, $index)">Delete Comment</button>
                     {{thing.date | date: "yyyy/MM/dd HH:mm" }} 
                     <h4>{{thing.body}}</h4>
