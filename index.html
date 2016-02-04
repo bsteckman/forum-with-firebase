@@ -47,7 +47,7 @@
                     <button class="btn btn-default" ng-click="destroy(quest, $index)">Delete Comment</button>
                     {{thing.date | date: "yyyy/MM/dd HH:mm" }} 
                     <h4>{{thing.body}}</h4>
-                    <input type="checkbox" ng-click="bestAnswer(thing)">Best Answer
+                    <input type="checkbox" ng-click="bestAnswer(thing, quest)" ng-disabled="quest.isAnswered">Best Answer
                     <br/>
                 </li>
             </ul>

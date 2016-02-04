@@ -48,8 +48,9 @@ app.controller('MainController', function ($scope) {
     }
    
     // toggle best answer
-       $scope.bestAnswer = function (thing) {
+       $scope.bestAnswer = function (thing, quest) {
            
-           thing.bestAnswer = !thing.bestAnswer;         
+           thing.bestAnswer = !thing.bestAnswer;
+           quest.isAnswered = true;       
     }
 });
