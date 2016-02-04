@@ -13,19 +13,19 @@ app.controller('MainController', function ($scope) {
         };
     };
     
-    $scope.resp = []
-    $scope.respFunc = function (response) {
-        if (response) {
-            response.date = Date.now();
-            response.likes = 0;
-            response.dislikes = 0;
-            $scope.resp.push(response);
-            mc.response = "";
+    // $scope.resp = []
+    $scope.respFunc = function (quest) {
+        if (quest.response) {
+            quest.response.date = Date.now();
+            quest.response.likes = 0;
+            quest.response.dislikes = 0;
+            quest.ans.push(quest.response);
+            quest.response = "";
         }
     }
 
-    $scope.destroy = function (index) {
-        $scope.resp.splice(index, 1);
+    $scope.destroy = function (quest, index) {
+        quest.ans.splice(index, 1);
     }
 
     $scope.voteUp = function (index) {

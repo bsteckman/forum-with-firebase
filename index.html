@@ -24,28 +24,22 @@
         <li ng-repeat="quest in ourStack track by $index">
             <h3>{{quest.question}}</h3>
             <button ng-click="voteUp($index)">Vote Up: </button>
-            <label for="upVote">{{ourStack[$index].likes}}</label>
+            <label for="upVote">{{quest.likes}}</label>
             <button ng-click="voteDown($index)">Vote Down: </button>
-            <label for="downVote">{{ourStack[$index].dislikes}}</label>
+            <label for="downVote">{{quest.dislikes}}</label>
             <br/>
-            <input type="text" ng-model="mc.response.question">
-            <button ng-click="respFunc(mc.response)">Submit</button>
+            <div>
+                <ul>
+                    <li class="list-group-item" ng-repeat="thing in quest.ans track by $index">{{thing.date | date: "yyyy/MM/dd HH:mm" }} {{thing.body}}
+                        <button ng-click="destroy(quest, $index)">Delete Comment</button>
+                    </li>
+                </ul>
+            </div>
+            <input type="text" ng-model="quest.response.body">
+            <button ng-click="respFunc(quest)">Submit</button>
         </li>
     </ul>
 
-    <div class="panel panel-default">
-        <!-- Default panel contents -->
-        <div class="panel-heading">Comments:</div>
-        <div class="panel-body">
-            <ul class="list-group">
-                <div>
-                    <li class="list-group-item" ng-repeat="thing in resp track by $index">{{thing.date | date: "yyyy/MM/dd HH:mm" }} {{thing.question}}
-                        <button ng-click="destroy($index)">Delete Comment</button>
-                    </li>
-                </div>
-            </ul>
-        </div>
-    </div>
 
 
     <!--UPVOTE/DOWNVOTE-->
