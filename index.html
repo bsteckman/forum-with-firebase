@@ -33,12 +33,12 @@
         <div>
             <ul>
                 <li class="list-group-item" ng-repeat="thing in quest.ans track by $index">
-                    <button ng-click="voteUp(quest, $index)">Vote Up: </button>
+                    <button ng-click="cvoteUp(quest, $index)">Vote Up: </button>
                     <label for="upVote" class="uppy">{{thing.likes}}</label>
-                    <button ng-click="voteDown(quest, $index)">Vote Down: </button>
+                    <button ng-click="cvoteDown(quest, $index)">Vote Down: </button>
                     <label for="downVote" class="downy">{{thing.dislikes}}</label>
                     <button ng-click="destroy(quest, $index)">Delete Comment</button>
-                    {{thing.date | date: "yyyy/MM/dd HH:mm" }} {{thing.body}}
+                    {{thing.date | date: "yyyy/MM/dd HH:mm" }} <h4>{{thing.body}}</h4>
                     <input type="checkbox">Best Answer
                     <br/>
                 </li>
