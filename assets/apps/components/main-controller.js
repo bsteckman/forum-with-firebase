@@ -19,13 +19,6 @@ app.controller('MainController', function ($scope) {
     //     likes: 0,
     //     dislikes: 0
     // }
-<<<<<<< HEAD
-    
-
-
-=======
-    // $scope.resp = []
->>>>>>> 99176db785dd3dfffc9e352d8a52f1aaa2c2443b
     $scope.respFunc = function (quest) {
         if (quest.response) {
             quest.response.date = Date.now();
@@ -38,10 +31,6 @@ app.controller('MainController', function ($scope) {
 
     $scope.destroy = function (quest, index) {
         quest.ans.splice(index, 1);
-<<<<<<< HEAD
-
-=======
->>>>>>> 99176db785dd3dfffc9e352d8a52f1aaa2c2443b
     }
 
     $scope.voteUp = function (index) {
