@@ -11,11 +11,7 @@
 </head>
 
 <body class="doc" ng-controller="MainController as mc">
-    <div class="panel panel-default">
-        <input type="text" ng-model="query" placeholder="search">
-        <button class="btn btn-info" ng-click="sortOrder = 'tags'">Sort by tags -A</button>
-        <button class="btn btn-info"" ng-click="sortOrder = '-tags'">Sort by tags -D</button>
-    </div>
+   
     <div class="jumbotron">
     <label for="">Input your question here.</label>
     <br>
@@ -25,6 +21,11 @@
     <br>
     <input type="text" ng-model="newQ.tags">
     <button class="btn btn-info" ng-click="discFunc(newQ)">Submit question</button>
+    </div>
+     <div class="panel panel-default">
+        <input type="text" ng-model="query" placeholder="search">
+        <button class="btn btn-info" ng-click="sortOrder = 'tags'">Sort by tags -A</button>
+        <button class="btn btn-info"" ng-click="sortOrder = '-tags'">Sort by tags -D</button>
     </div>
 <ul>
         <li ng-repeat="quest in ourStack | filter: query | orderBy: sortOrder track by $index">
@@ -40,19 +41,13 @@
             <div class="panel panel-default">
             <ul>
                 <li class="list-group-item" ng-class="{bestAnswer: thing.bestAnswer}" ng-repeat="thing in quest.ans track by $index">
-<<<<<<< HEAD
+
                     <button class="btn btn-success" ng-click="cvoteUp(quest, $index)">Vote Up: <span class="badge">{{thing.likes}}</span></button>
 
                     <button class="btn btn-danger" ng-click="cvoteDown(quest, $index)">Vote Down: <span class="badge">{{thing.dislikes}}</span></button>
 
                     <button class="btn btn-default" ng-click="destroy(quest, $index)">Delete Comment</button>
-=======
-                    <button class="btn btn-success" ng-click="cvoteUp(quest, $index)">Vote Up: </button>
-                    <label for="upVote" class="uppy"></label>
-                    <button class="btn btn-danger" ng-click="cvoteDown(quest, $index)">Vote Down: <span class="badge">{{thing.dislikes}}</span></button>
-                    <label for="downVote" class="downy"></label>
-                    <button class="btn btn-warning" ng-click="destroy(quest, $index)">Delete Comment</button>
->>>>>>> 432789c24e6a1f3c6a3bee7450462d7e8fcad44f
+
                     {{thing.date | date: "yyyy/MM/dd HH:mm" }} 
                     <h4>{{thing.body}}</h4>
                     <input type="checkbox" ng-click="bestAnswer(thing)">Best Answer
