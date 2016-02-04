@@ -12,7 +12,8 @@
 </head>
 
 <body class="body" ng-controller="MainController as mc">
-    <div class="jumbotron">
+    <h3> SickNastyClassy Forums </h3>
+    <div class="panel panel-default">
     <label for="">Input your question here.</label>
     <br>
         <textarea class="form-control" rows="10" id="question" type="text" ng-model="newQ.question"></textarea>
@@ -20,7 +21,7 @@
     <label for="">One word description of your question.</label>
     <br>
     <input class="form-control" type="text" ng-model="newQ.tags">
-    <button class="btn btn-info" ng-click="discFunc(newQ)">Submit question</button>
+    <button class="btn btn-primary" ng-click="discFunc(newQ)">Submit question</button>
     </div>
      <div class="panel panel-default">
         <input type="text" ng-model="query" placeholder="search">
@@ -46,7 +47,7 @@
 
                     <button class="btn btn-danger" ng-click="cvoteDown(quest, $index)">Vote Down: <span class="badge">{{thing.dislikes}}</span></button>
 
-                    <button class="btn btn-default" ng-click="destroy(quest, $index)">Delete Comment</button>
+                    <button class="btn btn-warning" ng-click="destroy(quest, $index)">Delete Comment</button>
 
                     {{thing.date | date: "yyyy/MM/dd HH:mm" }} 
                     <h4>{{thing.body}}</h4>
