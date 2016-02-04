@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>New Stack</title>
     <!--Styling-->
-    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/superhero/bootstrap.min.css">
     <link rel="stylesheet" href="assets/styles/style.css">
-
+<i class="fa fa-exclamation-triangle"></i>
 </head>
 
 <body class="body" ng-controller="MainController as mc">
@@ -25,8 +26,8 @@
     </div>
      <div class="panel panel-default">
         <input type="text" ng-model="query" placeholder="search">
-        <button class="btn btn-primary" ng-click="sortOrder = 'tags'">Sort by tags -A</button>
-        <button class="btn btn-primary" ng-click="sortOrder = '-tags'">Sort by tags -D</button>
+        <button class="btn btn-primary" ng-click="sortOrder = 'tags'">Sort by tags <i class="fa fa-level-up"></i></button>
+        <button class="btn btn-primary" ng-click="sortOrder = '-tags'">Sort by tags <i class="fa fa-level-down"></i></button>
     </div>
 <ul>
         <li ng-repeat="quest in ourStack | filter: query | orderBy: sortOrder track by $index">
