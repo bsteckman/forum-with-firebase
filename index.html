@@ -39,12 +39,12 @@
         <button class="btn btn-danger" ng-click="voteDown($index)" type="button">Vote Down: <span class="badge">{{quest.dislikes}}</span>
             </button>
             <div>
-                <a ng-click="$scope.showComments(quest)">Comments</a>
+                <a href='' ng-click="showComments(quest, thing)">Comments</a>
             </div>
         <br/>
             <div class="panel panel-default">
             <ul>
-                <li class="list-group-item" ng-class="{bestAnswer: thing.bestAnswer}" ng-repeat="thing in quest.ans track by $index">
+                <li class="list-group-item" ng-class="{bestAnswer: thing.bestAnswer}" ng-hide="quest.showComment" ng-repeat="thing in quest.ans track by $index">
 
                     <button class="btn btn-success" ng-click="cvoteUp(quest, $index)">Vote Up: <span class="badge">{{thing.likes}}</span></button>
 
@@ -63,7 +63,7 @@
         <button class="btn btn-primary" ng-click="respFunc(quest)">Submit</button>
     </li>
 </ul>
-
+                                
 
 
 

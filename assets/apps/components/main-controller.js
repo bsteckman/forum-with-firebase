@@ -22,6 +22,7 @@ app.controller('MainController', function ($scope) {
             quest.response.likes = 0;
             quest.response.dislikes = 0;
             quest.response.bestAnswer = false;
+            quest.response.showComment = false;
             quest.ans.push(quest.response);
             quest.response = "";
         }
@@ -49,12 +50,13 @@ app.controller('MainController', function ($scope) {
    
     // toggle best answer
     $scope.bestAnswer = function (thing, quest) {
-           
            thing.bestAnswer = !thing.bestAnswer;
            quest.isAnswered = true;       
     }
+    
     // Shows/hides comments
-    $scope.showComments = function (quest){
-        
+    $scope.showComments = function (thing, quest){
+            thing.showComment = !thing.showComment;
     }
+
 });
