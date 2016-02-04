@@ -27,10 +27,11 @@
         <li ng-repeat="quest in ourStack track by $index">
             <h3>{{quest.question}}</h3>
             <button ng-click="voteUp($index)">Vote Up: </button>
-            <label for="upVote">{{ourStack[$index].likes}}</label>
+            <label for="upVote">{{quest.likes}}</label>
             <button ng-click="voteDown($index)">Vote Down: </button>
-            <label for="downVote">{{ourStack[$index].dislikes}}</label>
+            <label for="downVote">{{quest.dislikes}}</label>
             <br/>
+<<<<<<< HEAD
             <input type="text" ng-model="response">
             <button ng-click="respFunc()">Submit</button>
         </li>
@@ -58,6 +59,20 @@
             </ul>
         </div>
     </div>
+=======
+            <div>
+                <ul>
+                    <li class="list-group-item" ng-repeat="thing in quest.ans track by $index">{{thing.date | date: "yyyy/MM/dd HH:mm" }} {{thing.body}}
+                        <button ng-click="destroy(quest, $index)">Delete Comment</button>
+                    </li>
+                </ul>
+            </div>
+            <input type="text" ng-model="quest.response.body">
+            <button ng-click="respFunc(quest)">Submit</button>
+        </li>
+    </ul>
+
+>>>>>>> a14f0ea0ea3f4b7574b5b217446671efb58e1347
 
 
     <!--UPVOTE/DOWNVOTE-->
