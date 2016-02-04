@@ -11,6 +11,7 @@
 
 </head>
 
+<<<<<<< HEAD
 <body class="body" ng-controller="MainController as mc">
     <div class="panel panel-default">
         <input class="form-control" type="text" ng-model="query" placeholder="search">
@@ -24,9 +25,15 @@
     <br>
     <label for="">One word description of your question.</label>
     <br>
+
     <input class="form-control" type="text" ng-model="newQ.tags">
-    <button class="btn btn-primary" ng-click="discFunc(newQ)">Submit question</button>
-    
+    <input class="form-control" type="text" ng-model="newQ.tags">
+    </div>
+     <div class="panel panel-default">
+        <input type="text" ng-model="query" placeholder="search">
+        <button class="btn btn-info" ng-click="sortOrder = 'tags'">Sort by tags -A</button>
+        <button class="btn btn-info"" ng-click="sortOrder = '-tags'">Sort by tags -D</button>
+    </div>
 <ul>
         <li ng-repeat="quest in ourStack | filter: query | orderBy: sortOrder track by $index">
         <h3>{{quest.question}} <span ng-click="ultraDelete($index)" ><small>X</small></span></h3>
@@ -41,11 +48,13 @@
             <div class="panel panel-default">
             <ul>
                 <li class="list-group-item" ng-class="{bestAnswer: thing.bestAnswer}" ng-repeat="thing in quest.ans track by $index">
-                    <button class="btn btn-success" ng-click="cvoteUp(quest, $index)">Vote Up: </button>
-                    <label for="upVote" class="uppy"></label>
+
+                    <button class="btn btn-success" ng-click="cvoteUp(quest, $index)">Vote Up: <span class="badge">{{thing.likes}}</span></button>
+
                     <button class="btn btn-danger" ng-click="cvoteDown(quest, $index)">Vote Down: <span class="badge">{{thing.dislikes}}</span></button>
-                    <label for="downVote" class="downy"></label>
-                    <button class="btn btn-warning" ng-click="destroy(quest, $index)">Delete Comment</button>
+
+                    <button class="btn btn-default" ng-click="destroy(quest, $index)">Delete Comment</button>
+
                     {{thing.date | date: "yyyy/MM/dd HH:mm" }} 
                     <h4>{{thing.body}}</h4>
                     <input type="checkbox" ng-click="bestAnswer(thing)">Best Answer
