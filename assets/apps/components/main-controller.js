@@ -1,6 +1,5 @@
 
 app.controller('MainController', function ($scope) {
-    var mc = this;
     $scope.ourStack = [];
     $scope.discFunc = function () {
         if ($scope.newQ) {
@@ -12,17 +11,28 @@ app.controller('MainController', function ($scope) {
             $scope.newQ = "";
         };
     };
+
+    // this.disc = {
+    //     question: "What is love",
+    //     tags: "noFilter",
+    //     date: Date.now(),
+    //     likes: 0,
+    //     dislikes: 0
+    // }
     
     $scope.resp = []
-    $scope.respFunc = function (response) {
-        if (response) {
-            response.date = Date.now();
-            response.likes = 0;
-            response.dislikes = 0;
-            $scope.resp.push(response);
-            mc.response = "";
+    $scope.respFunc = function () {
+        if ($scope.response) {
+            $scope.resp.date = Date.now();
+            $scope.resp.likes = 0;
+            $scope.resp.dislikes = 0;
+            $scope.resp.push($scope.response);
+            $scope.response = "";
         }
     }
+
+
+
 
     $scope.destroy = function (index) {
         $scope.resp.splice(index, 1);

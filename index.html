@@ -11,6 +11,8 @@
 </head>
 
 <body ng-controller="MainController as mc">
+
+
     <label for="">Input your question here.</label>
     <br>
     <input type="text" ng-model="newQ.question">
@@ -20,6 +22,7 @@
     <input type="text" ng-model="newQ.tags">
     <button ng-click="discFunc(newQ)">Submit question</button>
 
+
     <ul>
         <li ng-repeat="quest in ourStack track by $index">
             <h3>{{quest.question}}</h3>
@@ -28,10 +31,13 @@
             <button ng-click="voteDown($index)">Vote Down: </button>
             <label for="downVote">{{ourStack[$index].dislikes}}</label>
             <br/>
-            <input type="text" ng-model="mc.response.question">
-            <button ng-click="respFunc(mc.response)">Submit</button>
+            <input type="text" ng-model="response">
+            <button ng-click="respFunc()">Submit</button>
         </li>
     </ul>
+
+
+
 
     <div class="panel panel-default">
         <!-- Default panel contents -->
@@ -39,9 +45,15 @@
         <div class="panel-body">
             <ul class="list-group">
                 <div>
-                    <li class="list-group-item" ng-repeat="thing in resp track by $index">{{thing.date | date: "yyyy/MM/dd HH:mm" }} {{thing.question}}
+                    <li class="list-group-item">commentLorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis.</li>
+                </div>
+                <div>
+                    <li class="list-group-item" ng-repeat="thing in resp track by $index">{{thing.response}}
                         <button ng-click="destroy($index)">Delete Comment</button>
                     </li>
+                </div>
+                <div>
+                    <li id="response" class="list-group-item">responseLorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, corporis.</li>
                 </div>
             </ul>
         </div>
