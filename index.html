@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <title>New Stack</title>
     <!--Styling-->
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/superhero/bootstrap.min.css">
     <link rel="stylesheet" href="assets/styles/style.css">
 
 </head>
 
-<body class="doc" ng-controller="MainController as mc">
+<body class="body" ng-controller="MainController as mc">
     <div class="panel panel-default">
-        <input type="text" ng-model="query" placeholder="search">
-        <button class="btn btn-info" ng-click="sortOrder = 'tags'">Sort by tags -A</button>
-        <button class="btn btn-info"" ng-click="sortOrder = '-tags'">Sort by tags -D</button>
+        <input class="form-control" type="text" ng-model="query" placeholder="search">
+        <button class="btn btn-primary" ng-click="sortOrder = 'tags'">Sort by tags -A</button>
+        <button class="btn btn-primary" ng-click="sortOrder = '-tags'">Sort by tags -D</button>
     </div>
     <div class="jumbotron">
     <label for="">Input your question here.</label>
@@ -23,9 +24,9 @@
     <br>
     <label for="">One word description of your question.</label>
     <br>
-    <input type="text" ng-model="newQ.tags">
-    <button class="btn btn-info" ng-click="discFunc(newQ)">Submit question</button>
-    </div>
+    <input class="form-control" type="text" ng-model="newQ.tags">
+    <button class="btn btn-primary" ng-click="discFunc(newQ)">Submit question</button>
+    
 <ul>
         <li ng-repeat="quest in ourStack | filter: query | orderBy: sortOrder track by $index">
         <h3>{{quest.question}} <span ng-click="ultraDelete($index)" ><small>X</small></span></h3>
@@ -53,7 +54,7 @@
             </ul>
         </div>
         <input type="text" ng-model="quest.response.body">
-        <button class="btn btn-info" ng-click="respFunc(quest)">Submit</button>
+        <button class="btn btn-primary" ng-click="respFunc(quest)">Submit</button>
     </li>
 </ul>
 
