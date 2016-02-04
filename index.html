@@ -11,7 +11,11 @@
 </head>
 
 <body ng-controller="MainController as mc">
-
+    <div>
+        <input type="text" ng-model="query" placeholder="search">
+        <button ng-click="sortOrder = 'tags'">Sort by tags -A</button>
+        <button ng-click="sortOrder = '-tags'">Sort by tags -D</button>
+    </div>
 
     <label for="">Input your question here.</label>
     <br>
@@ -24,14 +28,13 @@
 
 
     <ul>
-        <li ng-repeat="quest in ourStack track by $index">
+        <li ng-repeat="quest in ourStack | filter: query | orderBy: sortOrder track by $index">
             <h3>{{quest.question}}</h3>
             <button ng-click="voteUp($index)">Vote Up: </button>
-            <label for="upVote">{{quest.likes}}</label>
+            <label for="upVote">{{ourStack[$index].likes}}</label>
             <button ng-click="voteDown($index)">Vote Down: </button>
-            <label for="downVote">{{quest.dislikes}}</label>
+            <label for="downVote">{{ourStack[$index].dislikes}}</label>
             <br/>
-<<<<<<< HEAD
             <input type="text" ng-model="response">
             <button ng-click="respFunc()">Submit</button>
         </li>
@@ -59,20 +62,6 @@
             </ul>
         </div>
     </div>
-=======
-            <div>
-                <ul>
-                    <li class="list-group-item" ng-repeat="thing in quest.ans track by $index">{{thing.date | date: "yyyy/MM/dd HH:mm" }} {{thing.body}}
-                        <button ng-click="destroy(quest, $index)">Delete Comment</button>
-                    </li>
-                </ul>
-            </div>
-            <input type="text" ng-model="quest.response.body">
-            <button ng-click="respFunc(quest)">Submit</button>
-        </li>
-    </ul>
-
->>>>>>> a14f0ea0ea3f4b7574b5b217446671efb58e1347
 
 
     <!--UPVOTE/DOWNVOTE-->
