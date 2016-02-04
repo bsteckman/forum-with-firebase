@@ -26,6 +26,7 @@
     <input type="text" ng-model="newQ.tags">
     <button ng-click="discFunc(newQ)">Submit question</button>
 
+<<<<<<< HEAD
 
     <ul>
         <li ng-repeat="quest in ourStack | filter: query | orderBy: sortOrder track by $index">
@@ -62,6 +63,35 @@
             </ul>
         </div>
     </div>
+=======
+<ul>
+    <li ng-repeat="quest in ourStack track by $index">
+        <h3>{{quest.question}}</h3>
+        <button ng-click="voteUp($index)">Vote Up: </button>
+        <label for="upVote" class="uppy">{{quest.likes}}</label>
+        <button ng-click="voteDown($index)">Vote Down: </button>
+        <label for="downVote"class="downy">{{quest.dislikes}}</label>
+        <br/>
+        <div>
+            <ul>
+                <li class="list-group-item" ng-repeat="thing in quest.ans track by $index">
+                    <button ng-click="voteUp(quest, $index)">Vote Up: </button>
+                    <label for="upVote" class="uppy">{{thing.likes}}</label>
+                    <button ng-click="voteDown(quest, $index)">Vote Down: </button>
+                    <label for="downVote" class="downy">{{thing.dislikes}}</label>
+                    <button ng-click="destroy(quest, $index)">Delete Comment</button>
+                    {{thing.date | date: "yyyy/MM/dd HH:mm" }} {{thing.body}}
+                    <input type="checkbox">Best Answer
+                    <br/>
+                </li>
+            </ul>
+        </div>
+        <input type="text" ng-model="quest.response.body">
+        <button ng-click="respFunc(quest)">Submit</button>
+    </li>
+</ul>
+
+>>>>>>> 99176db785dd3dfffc9e352d8a52f1aaa2c2443b
 
 
     <!--UPVOTE/DOWNVOTE-->
