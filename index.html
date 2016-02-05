@@ -27,11 +27,15 @@
         <input type="text" ng-model="query" placeholder="search">
         <button class="btn btn-primary btn-sm" ng-click="sortOrder = 'tags'">Sort by tags <i class="fa fa-level-up"></i></button>
         <button class="btn btn-primary btn-sm" ng-click="sortOrder = '-tags'">Sort by tags <i class="fa fa-level-down"></i></button>
+        <button class="btn btn-primary btn-sm" ng-click="sortOrder = 'date'">Sort by date <i class="fa fa-level-up"></i></button>
+        <button class="btn btn-primary btn-sm" ng-click="sortOrder = '-date'">Sort by date <i class="fa fa-level-down"></i></button>
     </div>
 
     <ul>
         <li ng-repeat="quest in ourStack | filter: query | orderBy: sortOrder track by $index">
-            <h3> <img ng-if="quest.isAnswered" src="assets/img/middleFingerWhite.png" alt="Fah Que"> {{quest.question}} <span ng-click="ultraDelete($index)" class="badge">Delete</span></h3>
+            <h3> <img ng-if="quest.isAnswered" src="assets/img/middleFingerWhite.png" alt="Fah Que"> 
+                {{quest.question}} <span ng-click="ultraDelete($index)" class="badge">Delete</span></h3>
+                <span>Tag: {{quest.tags}}</span>
             <label for="upVote" class="uppy"></label>
             <button class="btn btn-success btn-xs" ng-click="voteUp($index)" type="button">
                 Vote Up: <span class="badge">{{quest.likes}}</span>

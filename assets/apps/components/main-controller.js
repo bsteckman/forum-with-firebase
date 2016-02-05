@@ -58,5 +58,4 @@ app.controller('MainController', function ($scope) {
     $scope.showComments = function (thing, quest){
             thing.showComment = !thing.showComment;
     }
-
 });
