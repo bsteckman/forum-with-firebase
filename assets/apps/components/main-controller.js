@@ -41,11 +41,11 @@ app.controller('MainController', function ($scope) {
     }
     
     // Comments voting
-    $scope.cvoteUp = function (quest, index) {
-        quest.ans[index].likes += 1;
+    $scope.cvoteUp = function (thing) {
+        thing.likes += 1;
     }
-    $scope.cvoteDown = function (quest, index) {
-        quest.ans[index].dislikes -= 1;
+    $scope.cvoteDown = function (thing) {
+        thing.dislikes -= 1;
     }
    
     // toggle best answer
